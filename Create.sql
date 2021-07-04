@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS books (
 
 CREATE TABLE IF NOT EXISTS authors (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  `name` VARCHAR(50),
-  country VARCHAR(3) 
+  `name` VARCHAR(50) NOT NULL,
+  country VARCHAR(3)
 );
 
 
@@ -35,7 +35,7 @@ CREATE TABLE operations (
   book_id INT NOT NULL,
   client_id INT NOT NULL,
   `type` ENUM('B', 'R', 'S') NOT NULL COMMENT 'B=borrowed R=returned S=sold', 
-  finished TINYINT DEFAULT 1,
+  finished TINYINT NOT NULL DEFAULT 1,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
