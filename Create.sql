@@ -2,9 +2,10 @@ CREATE TABLE IF NOT EXISTS books (
   id INT PRIMARY KEY AUTO_INCREMENT,
   author_id INT NOT NULL,
   title VARCHAR(100) NOT NULL,  
-  `year` DATETIME DEFAULT '1990-01-01',
+  `year` INT DEFAULT '1900',
   `language` VARCHAR(2) NOT NULL COMMENT 'ISO 639-1 languages',
-  price DECIMAL(7,2)  NOT NULL DEFAULT 10.00,
+  cover_url VARCHAR(255),
+  price DECIMAL(7,2)  DEFAULT 10.00,
   sellable TINYINT DEFAULT 1,
   copies INT NOT NULL DEFAULT 1,  
   description TEXT
