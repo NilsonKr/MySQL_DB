@@ -19,3 +19,10 @@ INSERT INTO `clients` (client_id, name, email, birthdate, gender, active) VALUES
 INSERT INTO `clients` (name,email,birthdate,gender,active) 
 VALUES ('Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',0)
 ON DUPLICATE KEY UPDATE active = VALUES(active);
+
+/* Nested Queries at Insert */
+
+El laberinto de la Soledad | Octavio Paz | 1955  <!-- Insert That Data -->
+
+INSERT INTO books (title, author_id,`language`, `year`,price,copies)
+VALUES ('El laberinto de la Soledad', (SELECT id FROM authors WHERE name = 'Octavio Paz' LIMIT 1), 'es', '1955-01-01', 10, 5);
