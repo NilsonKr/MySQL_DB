@@ -6,3 +6,6 @@ JOIN books ON books.id = book_id
 JOIN clients ON clients.client_id = operations.client_id
 JOIN authors ON authors.id = books.author_id
 WHERE clients.gender = 'M' AND operations.type IN ('sell', 'return');
+
+
+

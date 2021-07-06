@@ -196,3 +196,9 @@ VALUES (1,'The Startup Playbook',2013,'en',NULL,10.00,1,5,'Advice from the exper
 (104,'Animal Farm',1900,'en',NULL,NULL,1,4,NULL),
 (70,'The Idiot',1900,'en',NULL,NULL,1,4,NULL),
 (192,'A Christmas Carol',1900,'en',NULL,NULL,1,4,NULL);
+
+
+/* Set Prices */
+UPDATE books 
+SET price = FLOOR(RAND()*(35-10+1))+10
+WHERE books.id between 1 and 198;
